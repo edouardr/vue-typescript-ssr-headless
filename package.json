@@ -1,0 +1,39 @@
+{
+  "name": "vue-typescript-ssr-headless",
+  "version": "0.0.1",
+  "description": "sample project to demonstrate VueJS + SSR + Typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edouardr/vue-typescript-ssr-headless.git"
+  },
+  "keywords": [
+    "VueJS",
+    "Typescript",
+    "SSR"
+  ],
+  "author": "EdouardR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edouardr/vue-typescript-ssr-headless/issues"
+  },
+  "homepage": "https://github.com/edouardr/vue-typescript-ssr-headless#readme",
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vue-class-component": "^6.1.2",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.8",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
+  }
+}
