@@ -14,20 +14,36 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Component from 'nuxt-class-component'
-import Card from '~/components/Card.vue'
-import { Cafe } from '~/models'
-import { State, Getter } from 'vuex-class'
+import Component from "nuxt-class-component";
+import Vue from "vue";
+import { Getter, State } from "vuex-class";
+import Card from "~/components/Card.vue";
+import { Cafe } from "~/models";
 
 @Component({
   components: {
-    Card
-  }
+    Card,
+  },
 })
 export default class extends Vue {
-  @State selected:boolean
-  @State cafes:Cafe[]
-  @Getter selectedCafe:Cafe
+  @State public selected: boolean;
+  @State public cafes: Cafe[];
+  @Getter public selectedCafe: Cafe;
+
+  public head() {
+
+    if (!this.cafes.length) {
+      return {
+        title: "null",
+      };
+    }
+
+    return {
+      meta: [
+          { hid: "description", name: "description", content: this.cafes[0].phone.text },
+        ],
+      title: this.cafes[0].street.text,
+    };
+  }
 }
 </script>

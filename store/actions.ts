@@ -1,25 +1,18 @@
-import { ActionTree } from 'vuex'
-import { getPeople } from '~/api/people'
-import { Symbols } from '~/constants'
-import { ICafeService } from 'api/icafe-service'
-import { lazyInject } from '~/ioc'
-import { CafeService } from '~/api/cafe-service';
+import { ActionContext, ActionTree } from "vuex";
+import { CafeService } from "~/api/cafe-service";
+import { ICafeService } from "~/api/icafe-service";
+import { Symbols } from "~/constants";
+import { IState } from "./";
 
-interface ActionRepository {
-  select({ commit }, id: number)
-}
-
-export var actions = {
-
-  async nuxtServerInit({ commit }) {
-    const service: ICafeService = new CafeService
-    let cafes = await service.getAll();
-    commit(Symbols.MUTATIONS.SET_PEOPLE, cafes && cafes.items)
+export const actions: ActionTree<IState, IState> = {
+  async nuxtServerInit({ commit }: ActionContext<IState, IState>) {
+    const cafeService: ICafeService = new CafeService();
+    const cafes = await cafeService.getAll();
+    commit(Symbols.MUTATIONS.SET_PEOPLE, cafes && cafes.items);
   },
 
-  select({ commit }, id: string) {
-    commit(Symbols.MUTATIONS.SELECT, id)
-  }
-}
+  select({ commit }: ActionContext<IState, IState>, id: string) {
+    commit(Symbols.MUTATIONS.SELECT, id);
+  },
 
-
+};

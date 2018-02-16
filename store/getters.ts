@@ -1,9 +1,9 @@
+import { GetterTree } from "vuex";
 import { Cafe } from "~/models";
 import { IState } from ".";
 
-export const getters = {
-  selectedCafe: (state: IState):Cafe => {
-    console.log(state.cafes)
-    return state.cafes && state.cafes.find(cafe => cafe.id === state.selected) || new Cafe()
-  }
-}
+export const getters: GetterTree<IState, IState> = {
+  selectedCafe: (state: IState): Cafe => {
+    return state.cafes && state.cafes.find((cafe) => cafe.id === state.selected) || new Cafe();
+  },
+};

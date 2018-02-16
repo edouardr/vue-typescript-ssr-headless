@@ -1,8 +1,8 @@
-import { ContentItem, Fields, FieldDecorators } from 'kentico-cloud-delivery-node-sdk';
-import { ContentTypes } from '~/content-types'
+import { ContentItem, FieldDecorators, Fields } from "kentico-cloud-delivery-node-sdk";
+import { ContentTypes } from "~/content-types";
 
 export class Cafe extends ContentItem {
-  public id: string
+  public id: string;
   public street: Fields.TextField;
   public city: Fields.TextField;
   public country: Fields.TextField;

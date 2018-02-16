@@ -1,15 +1,15 @@
 export class ContentTypes {
-  static Cafe = {
-    codeName: 'cafe',
+  public static Cafe = {
+    codeName: "cafe",
     fields: {
-      street: 'street',
-      city: 'city',
-      country: 'country',
-      state: 'state',
-      zipCode: 'zip_code',
-      phone: 'phone',
-      email: 'email',
-      photo: 'photo',
-    }
-  }
+      city: "city",
+      country: "country",
+      email: "email",
+      phone: "phone",
+      photo: "photo",
+      state: "state",
+      street: "street",
+      zipCode: "zip_code",
+    },
+  };
 }

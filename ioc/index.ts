@@ -1,8 +1,8 @@
-import { Container } from 'inversify'
-import getDecorators from 'inversify-inject-decorators'
-import { CafeService } from '~/api/cafe-service'
-import { ICafeService } from '~/api/icafe-service'
-import { Symbols } from '~/constants'
+import { Container } from "inversify";
+import getDecorators from "inversify-inject-decorators";
+import { CafeService } from "~/api/cafe-service";
+import { ICafeService } from "~/api/icafe-service";
+import { Symbols } from "~/constants";
 
 const container = new Container();
 

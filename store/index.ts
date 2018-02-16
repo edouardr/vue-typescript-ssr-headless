@@ -1,17 +1,26 @@
-import { actions } from './actions'
-import { getters } from './getters'
-import { mutations } from './mutations'
-import { Cafe } from '~/models'
-import { inject } from 'inversify'
+import { inject } from "inversify";
+import Vuex from "vuex";
+import { CafeService } from "~/api/cafe-service";
+import { Cafe } from "~/models";
+import { actions } from "./actions";
+import { getters } from "./getters";
+import { mutations } from "./mutations";
 
 export interface IState {
-  selected: string,
-  cafes: Array<Cafe>
+  cafes: Cafe[];
+  selected: string;
 }
 
-export const state = () => ({
-  selected: '',
-  cafes: []
-})
+const createStore = () => {
+  return new Vuex.Store<IState>({
+    actions,
+    getters,
+    mutations,
+    state: {
+      cafes: [],
+      selected: "",
+    },
+  });
+};
 
-export { actions, getters, mutations }
+export default createStore;
