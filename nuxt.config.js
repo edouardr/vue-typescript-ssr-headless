@@ -1,4 +1,3 @@
-require('reflect-metadata')
 const parseArgs = require('minimist')
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
@@ -43,5 +42,6 @@ module.exports = {
   build: {
     vendor: ['axios', 'gsap', 'vuex-class', 'nuxt-class-component', 'kentico-cloud-delivery-node-sdk']
   },
-  modules: ['~/modules/typescript.js']
+  modules: ['~/modules/typescript.js'],
+  plugins: ['~/plugins/reflect-metadata', '~/plugins/kentico-client']
 }
